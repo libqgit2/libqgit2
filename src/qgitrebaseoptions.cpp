@@ -29,6 +29,7 @@ struct RebaseOptions::Private {
     {
         git_rebase_options &opts = const_cast<git_rebase_options &>(mOpts);
         git_rebase_init_options(&opts, GIT_REBASE_OPTIONS_VERSION);
+        opts.checkout_options = *mCheckoutOptions.data();
     }
 
     const CheckoutOptions &checkoutOptions() const
